@@ -7,6 +7,7 @@ using TMPro;
 
 public class BlockController : MonoBehaviour
 {
+    public Animator blockAnimator;
     [SerializeField] Color colorCorrect;
     [SerializeField] Color colorExist;
     [SerializeField] Color colorFailed;
@@ -14,6 +15,10 @@ public class BlockController : MonoBehaviour
 
     [SerializeField] Image background;
     [SerializeField] TextMeshProUGUI blockText;
+    void Awake()
+    {
+        blockAnimator = GetComponent<Animator>();
+    }
 
     public void UpdateText(char letter)
     {
@@ -21,26 +26,27 @@ public class BlockController : MonoBehaviour
     }
     public void UpdateState(State state)
     {
-        background.color = GetColor(state);
+        int animationState=(int)state;
+        blockAnimator.SetInteger("State",animationState);
+        //background.color = GetColor(state);
 
     }   
-    Color GetColor(State state)
-    {
-        return state switch
-        {
-            State.None => colorNone,
-            State.Correct => colorCorrect,
-            State.Exist => colorExist,
-            State.Failed => colorFailed,
-        };
+    //Color GetColor(State state)
+    //{
+    //    return state switch
+    //    {
+    //        State.None => colorNone,
+    //        State.Correct => colorCorrect,
+    //        State.Contain => colorExist,
+    //        State.Failed => colorFailed,
+    //    };
        
-    }
-
+    //}
 }
 public enum State
 {
     None,
-    Exist,
-    Correct,
-    Failed,
+    Contain=1,
+    Correct=0,
+    Failed=2,
 }

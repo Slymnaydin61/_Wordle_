@@ -5,6 +5,7 @@ using UnityEngine;
 public class RowController : MonoBehaviour
 {
     [SerializeField] List<BlockController> blocks;
+    public int blockCount => blocks.Count;
     public void UpdateText(string msg)
     {
         var arrayChar = msg.ToCharArray();
@@ -15,6 +16,14 @@ public class RowController : MonoBehaviour
             bool isExist = i < arrayChar.Length;
             var content = isExist ? arrayChar[i] : ' ';
             block.UpdateText(content);
+        }
+    }
+    public void UpdateState(List<State> states)
+    {
+        for (int i = 0; i < states.Count; i++)
+        {
+
+            blocks[i].UpdateState(states[i]);
         }
     }
 }

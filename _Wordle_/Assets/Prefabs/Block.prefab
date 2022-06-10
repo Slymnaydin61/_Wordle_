@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 3368180744742994082}
   - component: {fileID: 2256663880279595626}
   - component: {fileID: -351771904371470088}
+  - component: {fileID: -2445127781489943378}
   m_Layer: 5
   m_Name: Block
   m_TagString: Untagged
@@ -302,9 +303,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9bf19ad0071a5543a242a7aeefbd6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockAnimator: {fileID: 0}
   colorCorrect: {r: 0.0378623, g: 1, b: 0, a: 1}
   colorExist: {r: 0.9811321, g: 0.59839976, b: 0, a: 1}
   colorFailed: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 1}
   colorNone: {r: 0, g: 0, b: 0, a: 0}
   background: {fileID: 5930857351505591718}
   blockText: {fileID: 4178621038227590838}
+--- !u!95 &-2445127781489943378
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5917181259189338574}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5a4d6bd083742ed4ca661dfbd5b16589, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
