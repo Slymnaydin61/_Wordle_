@@ -13,14 +13,16 @@ public class ContentController : MonoBehaviour
     [SerializeField] List<RowController> rows;
     [SerializeField] WordManager wordManager;
     BlockController blockController;
-    
+    public int guesscount;
 
-    int _index;
+
+
+    public int _index;
     void Start()
     {
         blockController=FindObjectOfType<BlockController>();
         inputField.onValueChanged.AddListener(OnUpdateContent);
-        inputField.onSubmit.AddListener(OnSubmit);
+        //inputField.onSubmit.AddListener(OnSubmit);
     }
     void OnUpdateContent(string msg)
     {
@@ -33,8 +35,9 @@ public class ContentController : MonoBehaviour
         rows[_index].UpdateState(states);
       
     }
-    void OnSubmit(string msg)
+    public void OnSubmit()
     {
+        
         blockController.blockAnimator.SetTrigger("Shake");
         temp.Select();
         inputField.Select();
@@ -49,6 +52,7 @@ public class ContentController : MonoBehaviour
             return;
         }
         UpdateState();
+        guesscount++;
         _index++;
         inputField.text = "";
 

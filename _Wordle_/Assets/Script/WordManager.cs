@@ -3,23 +3,51 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System.IO;
+using UnityEngine.UI;
 using TMPro;
 
 public class WordManager : MonoBehaviour
 {
+    public int reloadIndex=0;
     string [] words;
     string myWordFile,fileName;
-    int originIndex;
-    [SerializeField] List<string> origin;
+    public int originIndex;
+    public List<string> origin;
+    public List<Button> keys;
+    public int correctGuessCount;
+    public List<TextMeshProUGUI> keyText;
+    [SerializeField] string buttonText;
+    char[] buttonChar;
+    int buttonIndex;
+    [SerializeField] Color[] buttonColors; 
 
-    void Start()
-    {  
+    
+
+    void Awake()
+    {
+        originIndex = PlayerPrefs.GetInt("index");
         fileName = "Wordle.txt";
         myWordFile = Application.dataPath + "/" + fileName;
-        ReadFromFile();
-        originIndex =Random.Range(0, origin.Count);
+        ReadFromFile(); 
         Debug.Log(origin[originIndex]);
+        TurnString();
+        TurnCharArray();
+
     }
+    void TurnString()
+    {
+        foreach(var keys in keys)
+        {
+            buttonText = buttonText+keys.name;
+        } 
+    }
+    void TurnCharArray()
+    {
+        buttonChar = buttonText.ToCharArray();
+    }
+
+  
+
     void ReadFromFile()
     {
         words=File.ReadAllLines(myWordFile);
@@ -30,32 +58,58 @@ public class WordManager : MonoBehaviour
             origin.Add(line);   
         }
     }
-
-    public List<State> GetStates(string msg)
+    public List<LetterState> GetStates(string msg)
     {
-        var result = new List<State>();
+        var result = new List<LetterState>();
+        
 
-        var listOrigin = origin[originIndex].ToCharArray().ToList();
-        var listMsg=msg.ToUpper();
-        var listCurrent = listMsg.ToCharArray().ToList();
+        List<char> listOrigin = origin[originIndex].ToCharArray().ToList();//Random word list
+        string listMsg=msg.ToUpper();
+        List<char> listCurrent = listMsg.ToCharArray().ToList();//Input list
         for (int i = 0; i < listCurrent.Count; i++ )
         {
             char currentChar = listCurrent[i];
-            
-            Debug.Log(listCurrent[i]);
             bool contains = listOrigin.Contains(currentChar);
-            Debug.Log(contains);
+
             if( contains )
             {
-                var index =listOrigin.FindIndex(x => x == currentChar);
-                var isCorrect = index == i;    
-                result.Add(isCorrect ? State.Correct : State.Contain);
-                
-            
+                if (listCurrent[i] == listOrigin[i])
+                {
+                    result.Add((LetterState.Correct));
+                    correctGuessCount++;
+                    for(int j=0; j<buttonChar.Length; j++)
+                    {
+                        if (buttonChar[j] ==listCurrent[i])
+                        {
+                            keys[j].GetComponentInChildren<Image>().color = buttonColors[0];
+                        }
+                    }
+                    Debug.Log("button index"+" "+buttonIndex);
+                }
+                else
+                {
+                    result.Add(LetterState.Contain);
+                    for (int j = 0; j < buttonChar.Length; j++)
+                    {
+                        Color iscolored = keys[j].GetComponentInChildren<Image>().color;
+                        if (buttonChar[j] == listCurrent[i] && iscolored != buttonColors[0])
+                        {
+                            keys[j].GetComponentInChildren<Image>().color = buttonColors[1];
+                        }
+                    }
+
+                }
             }
             else
             {
-                result.Add(State.Failed);
+                result.Add(LetterState.Failed);
+                for (int j = 0; j < buttonChar.Length; j++)
+                {
+                    if (buttonChar[j] == listCurrent[i])
+                    {
+                        keys[j].GetComponentInChildren<Image>().color = buttonColors[2];
+                    }
+                }
             }
         }
         return result;

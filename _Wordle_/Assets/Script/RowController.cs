@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class RowController : MonoBehaviour
 {
-    [SerializeField] List<BlockController> blocks;
+    public List<BlockController> blocks;
     public int blockCount => blocks.Count;
     public void UpdateText(string msg)
     {
-        var arrayChar = msg.ToCharArray();
+        char [] arrayChar = msg.ToCharArray();
         for (int i = 0; i < blocks.Count; i++)
         {
             var block = blocks[i];
@@ -18,7 +18,7 @@ public class RowController : MonoBehaviour
             block.UpdateText(content);
         }
     }
-    public void UpdateState(List<State> states)
+    public void UpdateState(List<LetterState> states)
     {
         for (int i = 0; i < states.Count; i++)
         {
