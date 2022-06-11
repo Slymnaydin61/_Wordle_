@@ -32,7 +32,7 @@ public class Keyboard : MonoBehaviour
         int i = inputField.text.Length;
         var input = inputField.text.ToCharArray();
 
-        if (inputField.text.Length>1)
+        if (inputField.text.Length>0)
         {
             inputField.text = null;
             input[i-1] = ' ';

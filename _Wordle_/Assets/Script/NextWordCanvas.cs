@@ -13,6 +13,7 @@ public class NextWordCanvas : MonoBehaviour
     WordManager wordManager;
 
     [SerializeField] GameObject canvas;
+    [SerializeField] GameObject helpCanvas;
     [SerializeField] List<RowController> rows;
 
     void Awake()
@@ -44,28 +45,25 @@ public class NextWordCanvas : MonoBehaviour
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(sceneIndex);
     }
+    public void ReturnMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("GameScene1");
+    }
+    public void OpenHelpCanvas()
+    {
+        helpCanvas.SetActive(true);
+    }
+    public void CloseHelpCanvas()
+    {
+        helpCanvas.SetActive(false);
+    }
 
-    //public void NextWord()
-    //{
 
-    //    contentController._index = 0;
-    //    wordManager.guessCount = 0;
-    //    wordManager.originIndex=Random.Range(0,wordManager.origin.Count);
-    //    var row = rows[contentController._index];
-    //    for(int i=0; i<blocks.Count; i++)
-    //    {
-    //        blocksAnimator[i].SetInteger("State", 3);
-
-    //    }
-
-    //    Invoke("CloseCanvas", 2.5f);
-    //    Debug.Log(wordManager.origin);
-    //} 
-
-    //void CloseCanvas()
-    //{
-    //    canvas.SetActive(false);
-    //}
+  
 
 
 }
