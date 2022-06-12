@@ -8,4 +8,5 @@ public enum LetterState
     Contain = 1,
     Correct = 0,
     Failed = 2,
+    NotEnough=4,
 }

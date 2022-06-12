@@ -25,14 +25,22 @@ public class WordManager : MonoBehaviour
 
     void Awake()
     {
-        originIndex = PlayerPrefs.GetInt("index");
-        fileName = "Wordle.txt";
-        myWordFile = Application.dataPath + "/" + fileName;
+        DefineIndex();
+        FindWords();
         ReadFromFile(); 
-        Debug.Log(origin[originIndex]);
         TurnString();
         TurnCharArray();
+        Debug.Log(origin[originIndex]);
 
+    }
+    void FindWords()
+    {
+        fileName = "Wordle.txt";
+        myWordFile = Application.dataPath + "/" + fileName;
+    }
+    void DefineIndex()
+    {
+        originIndex = PlayerPrefs.GetInt("index");
     }
     void TurnString()
     {
@@ -45,8 +53,6 @@ public class WordManager : MonoBehaviour
     {
         buttonChar = buttonText.ToCharArray();
     }
-
-  
 
     void ReadFromFile()
     {
@@ -62,7 +68,6 @@ public class WordManager : MonoBehaviour
     {
         var result = new List<LetterState>();
         
-
         List<char> listOrigin = origin[originIndex].ToCharArray().ToList();//Random word list
         string listMsg=msg.ToUpper();
         List<char> listCurrent = listMsg.ToCharArray().ToList();//Input list
@@ -77,14 +82,13 @@ public class WordManager : MonoBehaviour
                 {
                     result.Add((LetterState.Correct));
                     correctGuessCount++;
-                    for(int j=0; j<buttonChar.Length; j++)
+                    for (int j = 0; j < buttonChar.Length; j++)
                     {
-                        if (buttonChar[j] ==listCurrent[i])
+                        if (buttonChar[j] == listCurrent[i])
                         {
                             keys[j].GetComponentInChildren<Image>().color = buttonColors[0];
                         }
                     }
-                    Debug.Log("button index"+" "+buttonIndex);
                 }
                 else
                 {

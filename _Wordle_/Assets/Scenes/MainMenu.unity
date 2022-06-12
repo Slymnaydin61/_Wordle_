@@ -186,10 +186,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1590202723}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &121093315
 GameObject:
@@ -338,7 +337,7 @@ GameObject:
   - component: {fileID: 163113571}
   - component: {fileID: 163113570}
   - component: {fileID: 163113569}
-  - component: {fileID: 163113568}
+  - component: {fileID: 163113572}
   m_Layer: 5
   m_Name: HELP
   m_TagString: Untagged
@@ -367,23 +366,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -313}
   m_SizeDelta: {x: 900, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &163113568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163113566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03c7630f85c5a7b43b0f7f103fa56cd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blocks: []
-  blocksAnimator: []
-  canvas: {fileID: 0}
-  helpCanvas: {fileID: 301400525}
-  rows: []
 --- !u!114 &163113569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,8 +410,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 163113568}
-        m_TargetAssemblyTypeName: NextWordCanvas, Assembly-CSharp
+      - m_Target: {fileID: 163113572}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: OpenHelpCanvas
         m_Mode: 1
         m_Arguments:
@@ -478,6 +460,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163113566}
   m_CullTransparentMesh: 1
+--- !u!114 &163113572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163113566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea629da2322b2784e8cbc5a4d5e81365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordManager: {fileID: 0}
+  helpCanvas: {fileID: 301400525}
 --- !u!1 &275544831
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +487,7 @@ GameObject:
   - component: {fileID: 275544833}
   - component: {fileID: 275544832}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -673,7 +669,7 @@ RectTransform:
   - {fileID: 1311874454}
   - {fileID: 1635382810}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1768,8 +1764,8 @@ RectTransform:
   m_Children:
   - {fileID: 1926514078}
   - {fileID: 163113567}
-  m_Father: {fileID: 10956216}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1849,9 +1845,9 @@ GameObject:
   - component: {fileID: 1635382814}
   - component: {fileID: 1635382813}
   - component: {fileID: 1635382812}
-  - component: {fileID: 1635382811}
+  - component: {fileID: 1635382815}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1878,23 +1874,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -345}
   m_SizeDelta: {x: 900, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1635382811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1635382809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03c7630f85c5a7b43b0f7f103fa56cd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blocks: []
-  blocksAnimator: []
-  canvas: {fileID: 0}
-  helpCanvas: {fileID: 301400525}
-  rows: []
 --- !u!114 &1635382812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1939,8 +1918,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1635382811}
-        m_TargetAssemblyTypeName: NextWordCanvas, Assembly-CSharp
+      - m_Target: {fileID: 1635382815}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: CloseHelpCanvas
         m_Mode: 1
         m_Arguments:
@@ -1989,6 +1968,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635382809}
   m_CullTransparentMesh: 1
+--- !u!114 &1635382815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635382809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea629da2322b2784e8cbc5a4d5e81365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordManager: {fileID: 0}
+  helpCanvas: {fileID: 301400525}
 --- !u!1 &1779095144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2271,7 +2264,8 @@ GameObject:
   - component: {fileID: 1926514082}
   - component: {fileID: 1926514081}
   - component: {fileID: 1926514080}
-  - component: {fileID: 1926514079}
+  - component: {fileID: 1926514083}
+  - component: {fileID: 1926514084}
   m_Layer: 5
   m_Name: PlayGame
   m_TagString: Untagged
@@ -2300,23 +2294,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 900, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1926514079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926514077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03c7630f85c5a7b43b0f7f103fa56cd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blocks: []
-  blocksAnimator: []
-  canvas: {fileID: 0}
-  helpCanvas: {fileID: 0}
-  rows: []
 --- !u!114 &1926514080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2361,8 +2338,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1926514079}
-        m_TargetAssemblyTypeName: NextWordCanvas, Assembly-CSharp
+      - m_Target: {fileID: 1926514083}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
@@ -2411,6 +2388,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926514077}
   m_CullTransparentMesh: 1
+--- !u!114 &1926514083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926514077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea629da2322b2784e8cbc5a4d5e81365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wordManager: {fileID: 1926514084}
+  helpCanvas: {fileID: 301400525}
+--- !u!114 &1926514084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926514077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bca297e70ec1a4d44a1f269a52fb7792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reloadIndex: 0
+  originIndex: 0
+  origin: []
+  keys: []
+  correctGuessCount: 0
+  keyText: []
+  buttonText: 
+  buttonColors: []
 --- !u!1 &2026502761
 GameObject:
   m_ObjectHideFlags: 0

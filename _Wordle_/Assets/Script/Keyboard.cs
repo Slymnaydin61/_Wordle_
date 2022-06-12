@@ -9,10 +9,14 @@ public class Keyboard : MonoBehaviour
 {
     GameManager gameManager;
     WordManager wordManager;
-    [SerializeField] TMP_InputField inputField;
-    public List<Color> stateColor;
-    
 
+
+    [SerializeField] TMP_InputField inputField;
+
+
+    public List<Color> stateColor;
+
+    
     public bool canCount;
     void Awake()
     {
@@ -22,7 +26,9 @@ public class Keyboard : MonoBehaviour
     }
     public void InputLetter(string letter)
     {
-        if(inputField.text.Length<5)
+        int inputAmount = inputField.text.Length;
+        int correctGuessAmount = wordManager.correctGuessCount;
+        if(inputAmount<5 && correctGuessAmount<5 )
         {
             inputField.text = inputField.text + "" + letter.ToCharArray()[0];
         }
@@ -40,7 +46,6 @@ public class Keyboard : MonoBehaviour
             {
                 inputField.text = inputField.text + input[j];
             }
-            Debug.Log(inputField);
         }
         
     }
@@ -48,9 +53,8 @@ public class Keyboard : MonoBehaviour
     {
         wordManager.correctGuessCount = 0;
         canCount = true;
-        contentController.OnSubmit();
-        gameManager.canvasTimer = 3f;
-        Debug.Log(wordManager.correctGuessCount);
+        contentController.OnSubmit(LetterState.Contain);
+        gameManager.canvasTimer = 2f;
     }
    
    

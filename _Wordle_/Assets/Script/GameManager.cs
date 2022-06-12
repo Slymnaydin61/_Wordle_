@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public float canvasTimer;
     Keyboard keyboard;
     ContentController contentController;
     WordManager wordManager;
+
+
     [SerializeField] GameObject nextWordCanvas;
     [SerializeField] GameObject wrongGuessCanvas;
-    [SerializeField] float delayTime=2; 
+
+
+    [SerializeField] float delayTime=2;
+    public float canvasTimer;
+
     void Awake()
     {
         contentController=FindObjectOfType<ContentController>();
@@ -23,11 +28,8 @@ public class GameManager : MonoBehaviour
         StartOpenCanvas();
         SetCanCount();
         OpenWrongGuessCanvas();
-        Debug.Log(contentController.guesscount);
-
     }
-
-    
+ 
     void StartOpenCanvas()
     {
         if(canvasTimer<=0)
@@ -60,7 +62,6 @@ public class GameManager : MonoBehaviour
     }
     void CountDownForCanvas()
     {
-        Debug.Log(keyboard.canCount);
         canvasTimer -= Time.deltaTime;
     }
     void OpenWrongGuessCanvas()

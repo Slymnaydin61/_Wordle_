@@ -1811,9 +1811,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2980420959301158237, guid: bb0ed1d11223faf449c8875157ac4786, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980420959301158237, guid: bb0ed1d11223faf449c8875157ac4786, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1600
+      objectReference: {fileID: 0}
     - target: {fileID: 2980420959301158239, guid: bb0ed1d11223faf449c8875157ac4786, type: 3}
       propertyPath: m_Name
       value: NextWordCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2980420959301158239, guid: bb0ed1d11223faf449c8875157ac4786, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb0ed1d11223faf449c8875157ac4786, type: 3}
@@ -3302,6 +3314,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576349105}
   m_CullTransparentMesh: 1
+--- !u!1 &577864882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2980420959301158239, guid: bb0ed1d11223faf449c8875157ac4786, type: 3}
+  m_PrefabInstance: {fileID: 343503036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &679104849
 GameObject:
   m_ObjectHideFlags: 0
@@ -9570,7 +9587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasTimer: 0
-  nextWordCanvas: {fileID: 0}
+  nextWordCanvas: {fileID: 577864882}
   wrongGuessCanvas: {fileID: 226183128}
   delayTime: 2
 --- !u!4 &1838720150

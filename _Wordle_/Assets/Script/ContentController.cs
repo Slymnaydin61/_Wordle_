@@ -11,18 +11,18 @@ public class ContentController : MonoBehaviour
     public TMP_InputField inputField;
     [SerializeField] Button temp;
     [SerializeField] List<RowController> rows;
+
+
     [SerializeField] WordManager wordManager;
     BlockController blockController;
+
+
     public int guesscount;
-
-
-
     public int _index;
     void Start()
     {
         blockController=FindObjectOfType<BlockController>();
         inputField.onValueChanged.AddListener(OnUpdateContent);
-        //inputField.onSubmit.AddListener(OnSubmit);
     }
     void OnUpdateContent(string msg)
     {
@@ -35,16 +35,15 @@ public class ContentController : MonoBehaviour
         rows[_index].UpdateState(states);
       
     }
-    public void OnSubmit()
+    public void OnSubmit(LetterState state)
     {
         
-        blockController.blockAnimator.SetTrigger("Shake");
+        
         temp.Select();
         inputField.Select();
         if (!IsEnough())
         {
-            
-            Debug.Log("Yetersiz Harf");
+            state=LetterState.NotEnough;
             return;
         }
         else if(_index>5)

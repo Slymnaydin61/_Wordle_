@@ -6,24 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class NextWordCanvas : MonoBehaviour
 {
-    [SerializeField] List<BlockController> blocks;
-    [SerializeField] List<Animator>  blocksAnimator;
-    ContentController contentController;
-    RowController rowController;
     WordManager wordManager;
-
-    [SerializeField] GameObject canvas;
-    [SerializeField] GameObject helpCanvas;
-    [SerializeField] List<RowController> rows;
 
     void Awake()
     {
-        //foreach (var block in blocks)
-        //{
-        //    blocksAnimator = FindObjectOfType<Animator>();
-        //}
-        rowController = FindObjectOfType<RowController>();
-        contentController=FindObjectOfType<ContentController>();
         wordManager=FindObjectOfType<WordManager>();
     }
     public void SceneLoad()
@@ -49,21 +35,5 @@ public class NextWordCanvas : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
-    public void PlayGame()
-    {
-        SceneManager.LoadScene("GameScene1");
-    }
-    public void OpenHelpCanvas()
-    {
-        helpCanvas.SetActive(true);
-    }
-    public void CloseHelpCanvas()
-    {
-        helpCanvas.SetActive(false);
-    }
-
-
-  
-
 
 }
