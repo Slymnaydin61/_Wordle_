@@ -405,6 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca297e70ec1a4d44a1f269a52fb7792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isExist: 0
   reloadIndex: 0
   originIndex: 0
   origin: []
@@ -470,6 +471,7 @@ MonoBehaviour:
   - {fileID: 282782358}
   - {fileID: 410519327}
   buttonText: 
+  inputField: {fileID: 1096605135}
   buttonColors:
   - {r: 0.097271614, g: 1, b: 0.042452812, a: 1}
   - {r: 1, g: 0.49459836, b: 0, a: 1}
@@ -11843,10 +11845,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21ccdff82cff5a4ea2c5fd1f344e932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasTimer: 0
   nextWordCanvas: {fileID: 1834833932}
   wrongGuessCanvas: {fileID: 2808853702492707168}
   delayTime: 2
+  canvasTimer: 0
 --- !u!4 &2093595376
 Transform:
   m_ObjectHideFlags: 0

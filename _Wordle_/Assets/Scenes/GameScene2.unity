@@ -9586,10 +9586,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21ccdff82cff5a4ea2c5fd1f344e932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasTimer: 0
   nextWordCanvas: {fileID: 577864882}
   wrongGuessCanvas: {fileID: 226183128}
   delayTime: 2
+  canvasTimer: 0
 --- !u!4 &1838720150
 Transform:
   m_ObjectHideFlags: 0
@@ -11192,6 +11192,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1209012398}
     - target: {fileID: 1675743756574516258, guid: 2258a6c1532bc1543a84db84e62244ec, type: 3}
+      propertyPath: inputField
+      value: 
+      objectReference: {fileID: 1096605135}
+    - target: {fileID: 1675743756574516259, guid: 2258a6c1532bc1543a84db84e62244ec, type: 3}
       propertyPath: inputField
       value: 
       objectReference: {fileID: 1096605135}

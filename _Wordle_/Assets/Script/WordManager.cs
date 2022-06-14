@@ -8,6 +8,7 @@ using TMPro;
 
 public class WordManager : MonoBehaviour
 {
+    public bool isExist;
     public int reloadIndex=0;
     string [] words;
     string myWordFile,fileName;
@@ -17,9 +18,10 @@ public class WordManager : MonoBehaviour
     public int correctGuessCount;
     public List<TextMeshProUGUI> keyText;
     [SerializeField] string buttonText;
+    [SerializeField] TMP_InputField inputField;
     char[] buttonChar;
     int buttonIndex;
-    [SerializeField] Color[] buttonColors; 
+    [SerializeField] Color[] buttonColors;
 
     
 
@@ -31,7 +33,10 @@ public class WordManager : MonoBehaviour
         TurnString();
         TurnCharArray();
         Debug.Log(origin[originIndex]);
-
+    }
+    void Update()
+    {
+        CheckWordIsExist();
     }
     void FindWords()
     {
@@ -64,19 +69,34 @@ public class WordManager : MonoBehaviour
             origin.Add(line);   
         }
     }
+    public void CheckWordIsExist()
+    {
+        string inputWord=inputField.text.ToString().ToUpper();
+        Debug.Log(inputWord);
+        foreach(var word in origin)
+        {
+            if (inputWord == word)
+            {
+                isExist = true;
+                Debug.Log("Kelime Doðru");
+            }     
+        }
+    }
     public List<LetterState> GetStates(string msg)
     {
         var result = new List<LetterState>();
-        
+
+
+
         List<char> listOrigin = origin[originIndex].ToCharArray().ToList();//Random word list
-        string listMsg=msg.ToUpper();
+        string listMsg = msg.ToUpper();
         List<char> listCurrent = listMsg.ToCharArray().ToList();//Input list
-        for (int i = 0; i < listCurrent.Count; i++ )
+        for (int i = 0; i < listCurrent.Count; i++)
         {
             char currentChar = listCurrent[i];
             bool contains = listOrigin.Contains(currentChar);
 
-            if( contains )
+            if (contains)
             {
                 if (listCurrent[i] == listOrigin[i])
                 {
@@ -116,6 +136,8 @@ public class WordManager : MonoBehaviour
                 }
             }
         }
+
         return result;
     }
+        
 }

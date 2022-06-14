@@ -37,24 +37,29 @@ public class ContentController : MonoBehaviour
     }
     public void OnSubmit(LetterState state)
     {
-        
-        
-        temp.Select();
-        inputField.Select();
-        if (!IsEnough())
+        if(wordManager.isExist)
         {
-            state=LetterState.NotEnough;
-            return;
-        }
-        else if(_index>5)
-        {
-            return;
-        }
-        UpdateState();
-        guesscount++;
-        _index++;
-        inputField.text = "";
+            temp.Select();
+            inputField.Select();
+            if (!IsEnough())
+            {
+                return;
 
+            }
+            else if (_index > 5)
+            {
+                return;
+            }
+            UpdateState();
+            guesscount++;
+            _index++;
+            inputField.text = "";
+        }
+        else
+        {
+            Debug.Log("Böyle Bir Kelime Yok");
+        }
+        wordManager.isExist = false;
     }
     private bool IsEnough()
     {
