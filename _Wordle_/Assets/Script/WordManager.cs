@@ -19,9 +19,8 @@ public class WordManager : MonoBehaviour
     public List<TextMeshProUGUI> keyText;
     [SerializeField] string buttonText;
     [SerializeField] TMP_InputField inputField;
-    char[] buttonChar;
-    int buttonIndex;
-    [SerializeField] Color[] buttonColors;
+    public char[] buttonChar;
+    public Color[] buttonColors;
 
     
 
