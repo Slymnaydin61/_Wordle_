@@ -9,6 +9,8 @@ public class BlockController : MonoBehaviour
 {
     public Animator blockAnimator;
 
+    [SerializeField] GameObject stars;
+
     [SerializeField] Image background;
     [SerializeField] TextMeshProUGUI blockText;
     public int animationState;
@@ -26,7 +28,11 @@ public class BlockController : MonoBehaviour
         animationState=(int)state;
         blockAnimator.SetInteger("State",animationState);
 
-    }   
+    }  
+    public void ActiveStars()
+    {
+        stars.SetActive(true);
+    }
 
 }
 
