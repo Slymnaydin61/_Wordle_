@@ -16,7 +16,7 @@ public class Keyboard : MonoBehaviour
 
     public List<Color> stateColor;
 
-    
+    public bool isColored;
     public bool canCount;
     void Awake()
     {

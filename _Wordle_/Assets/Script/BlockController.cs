@@ -27,8 +27,8 @@ public class BlockController : MonoBehaviour
     {
         animationState=(int)state;
         blockAnimator.SetInteger("State",animationState);
-
     }  
+
     public void ActiveStars()
     {
         stars.SetActive(true);

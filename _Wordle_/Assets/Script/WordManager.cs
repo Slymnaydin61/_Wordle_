@@ -8,22 +8,29 @@ using TMPro;
 
 public class WordManager : MonoBehaviour
 {
-    public bool isExist;
-    public int reloadIndex=0;
-    string [] words;
-    string myWordFile,fileName;
+    public int reloadIndex = 0;
     public int originIndex;
+    public int correctGuessCount;
+
+    int buttonIndex;
+    int letterIndex;
+
     public List<string> origin;
     public List<Button> keys;
-    public int correctGuessCount;
-    public List<TextMeshProUGUI> keyText;
-    [SerializeField] string buttonText;
-    [SerializeField] TMP_InputField inputField;
+    List<char> listCurrent;
+
+    string[] words;
     public char[] buttonChar;
     public Color[] buttonColors;
 
-    
+    public bool isExist;
 
+    string myWordFile,fileName;
+
+    [SerializeField] string buttonText;
+
+    [SerializeField] TMP_InputField inputField;
+    
     void Awake()
     {
         DefineIndex();
@@ -31,7 +38,6 @@ public class WordManager : MonoBehaviour
         ReadFromFile(); 
         TurnString();
         TurnCharArray();
-        Debug.Log(origin[originIndex]);
     }
     void Update()
     {
@@ -60,8 +66,7 @@ public class WordManager : MonoBehaviour
 
     void ReadFromFile()
     {
-        words=File.ReadAllLines(myWordFile);
-        
+        words=File.ReadAllLines(myWordFile);     
         foreach (string line in words)
         {
             line.ToUpper();
@@ -84,59 +89,64 @@ public class WordManager : MonoBehaviour
     public List<LetterState> GetStates(string msg)
     {
         var result = new List<LetterState>();
-
-
-
         List<char> listOrigin = origin[originIndex].ToCharArray().ToList();//Random word list
         string listMsg = msg.ToUpper();
-        List<char> listCurrent = listMsg.ToCharArray().ToList();//Input list
-        for (int i = 0; i < listCurrent.Count; i++)
+        listCurrent = listMsg.ToCharArray().ToList();//Input list
+        for (letterIndex = 0; letterIndex < listCurrent.Count; letterIndex++)
         {
-            char currentChar = listCurrent[i];
+            char currentChar = listCurrent[letterIndex];
             bool contains = listOrigin.Contains(currentChar);
-
             if (contains)
             {
-                if (listCurrent[i] == listOrigin[i])
+                if (listCurrent[letterIndex] == listOrigin[letterIndex])
                 {
                     result.Add((LetterState.Correct));
                     correctGuessCount++;
-                    for (int j = 0; j < buttonChar.Length; j++)
-                    {
-                        if (buttonChar[j] == listCurrent[i])
-                        {
-                            keys[j].GetComponentInChildren<Image>().color = buttonColors[0];
-                        }
-                    }
-                }
-                else
-                {
-                    result.Add(LetterState.Contain);
-                    for (int j = 0; j < buttonChar.Length; j++)
-                    {
-                        Color iscolored = keys[j].GetComponentInChildren<Image>().color;
-                        if (buttonChar[j] == listCurrent[i] && iscolored != buttonColors[0])
-                        {
-                            keys[j].GetComponentInChildren<Image>().color = buttonColors[1];
-                        }
-                    }
+                    ColorCorrectButton();
 
                 }
+                result.Add(LetterState.Contain);
+                ColorExistButton();
             }
             else
             {
                 result.Add(LetterState.Failed);
-                for (int j = 0; j < buttonChar.Length; j++)
-                {
-                    if (buttonChar[j] == listCurrent[i])
-                    {
-                        keys[j].GetComponentInChildren<Image>().color = buttonColors[2];
-                    }
-                }
+                ColorWrongGuessButton();
             }
         }
-
         return result;
+    }
+    void ColorWrongGuessButton()
+    {
+        for(buttonIndex=0;buttonIndex<buttonChar.Length;buttonIndex++)
+        {
+            if (buttonChar[buttonIndex] == listCurrent[letterIndex])
+            {
+                keys[buttonIndex].GetComponentInChildren<Image>().color = buttonColors[2]; ;
+            }
+        }
+    }
+    void ColorExistButton()
+    {
+        for ( buttonIndex = 0; buttonIndex < buttonChar.Length; buttonIndex++)
+        {
+            Color iscolored = keys[buttonIndex].GetComponentInChildren<Image>().color;
+            if (buttonChar[buttonIndex] == listCurrent[letterIndex] && iscolored != buttonColors[0])
+            {
+                keys[buttonIndex].GetComponentInChildren<Image>().color = buttonColors[1];
+            }
+        }
+    }
+    void ColorCorrectButton()
+    {
+        for ( buttonIndex = 0; buttonIndex < buttonChar.Length; buttonIndex++)
+        {
+            if (buttonChar[buttonIndex] == listCurrent[letterIndex])
+            {
+                keys[buttonIndex].GetComponentInChildren<Image>().color = buttonColors[0];
+                keys[buttonIndex].GetComponentInChildren<Keyboard>().isColored = true;
+            }
+        }
     }
         
 }

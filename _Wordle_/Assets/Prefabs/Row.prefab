@@ -351,7 +351,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2837313678468412711, guid: 22d71ba84a8ca43448956d5d808ef9c9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 22d71ba84a8ca43448956d5d808ef9c9, type: 3}
 --- !u!224 &2466438494883489633 stripped
 RectTransform:

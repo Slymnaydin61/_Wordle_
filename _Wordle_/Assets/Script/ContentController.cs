@@ -12,16 +12,12 @@ public class ContentController : MonoBehaviour
     [SerializeField] Button temp;
     [SerializeField] List<RowController> rows;
 
-
     [SerializeField] WordManager wordManager;
-    BlockController blockController;
-
 
     public int guesscount;
     public int _index;
     void Start()
     {
-        blockController=FindObjectOfType<BlockController>();
         inputField.onValueChanged.AddListener(OnUpdateContent);
     }
     void OnUpdateContent(string msg)
@@ -33,7 +29,6 @@ public class ContentController : MonoBehaviour
     {
         var states = wordManager.GetStates(inputField.text);
         rows[_index].UpdateState(states);
-      
     }
     public void OnSubmit(LetterState state)
     {

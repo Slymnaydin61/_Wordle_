@@ -405,9 +405,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca297e70ec1a4d44a1f269a52fb7792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isExist: 0
   reloadIndex: 0
   originIndex: 0
+  correctGuessCount: 0
   origin: []
   keys:
   - {fileID: 139136215}
@@ -439,44 +439,14 @@ MonoBehaviour:
   - {fileID: 1940017495}
   - {fileID: 1613109520}
   - {fileID: 374059926}
-  correctGuessCount: 0
-  keyText:
-  - {fileID: 1738447641}
-  - {fileID: 999076737}
-  - {fileID: 375980896}
-  - {fileID: 854261424}
-  - {fileID: 531649195}
-  - {fileID: 2008884412}
-  - {fileID: 2110044777}
-  - {fileID: 571159882}
-  - {fileID: 1703468125}
-  - {fileID: 1934661913}
-  - {fileID: 156070999}
-  - {fileID: 576349107}
-  - {fileID: 12611920}
-  - {fileID: 1626063645}
-  - {fileID: 679104851}
-  - {fileID: 1934123344}
-  - {fileID: 1733087783}
-  - {fileID: 521354627}
-  - {fileID: 1623896136}
-  - {fileID: 216730866}
-  - {fileID: 1633612987}
-  - {fileID: 1140013589}
-  - {fileID: 1225856266}
-  - {fileID: 543432471}
-  - {fileID: 695309582}
-  - {fileID: 879463424}
-  - {fileID: 952019709}
-  - {fileID: 282782358}
-  - {fileID: 410519327}
-  buttonText: 
-  inputField: {fileID: 1096605135}
   buttonChar: 
   buttonColors:
   - {r: 0.097271614, g: 1, b: 0.042452812, a: 1}
   - {r: 1, g: 0.49459836, b: 0, a: 1}
   - {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
+  isExist: 0
+  buttonText: 
+  inputField: {fileID: 1096605135}
 --- !u!1 &130075871
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!1 &156070997
 GameObject:
@@ -952,6 +923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &176434765
 MonoBehaviour:
@@ -1102,6 +1074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &189873546
 MonoBehaviour:
@@ -1252,6 +1225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &216523038
 MonoBehaviour:
@@ -1807,6 +1781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &299738359
 MonoBehaviour:
@@ -1978,6 +1953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &374059926
 MonoBehaviour:
@@ -2554,6 +2530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &471308342
 MonoBehaviour:
@@ -3632,6 +3609,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 120345366}
     m_Modifications:
+    - target: {fileID: 259041637829387162, guid: eb16758c13dce2949ac45bdf73b9b67f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 826412827889480551, guid: eb16758c13dce2949ac45bdf73b9b67f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3762,6 +3743,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3265123498107493620, guid: eb16758c13dce2949ac45bdf73b9b67f, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913042812120686784, guid: eb16758c13dce2949ac45bdf73b9b67f, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5669831356313187127, guid: eb16758c13dce2949ac45bdf73b9b67f, type: 3}
@@ -4069,6 +4054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &690385837
 MonoBehaviour:
@@ -4448,6 +4434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!1 &753702781
 GameObject:
@@ -4504,6 +4491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &753702784
 MonoBehaviour:
@@ -5420,6 +5408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &968039567
 MonoBehaviour:
@@ -5710,6 +5699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 0}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1020925061
 MonoBehaviour:
@@ -6189,6 +6179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1139739087
 MonoBehaviour:
@@ -6490,6 +6481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1186474072
 MonoBehaviour:
@@ -6640,6 +6632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1199558566
 MonoBehaviour:
@@ -6912,6 +6905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1220041098
 MonoBehaviour:
@@ -7208,6 +7202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1271608455
 MonoBehaviour:
@@ -7358,6 +7353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1352239706
 MonoBehaviour:
@@ -7508,6 +7504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1378943144
 MonoBehaviour:
@@ -7875,6 +7872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1432651477
 MonoBehaviour:
@@ -8252,6 +8250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1577967612
 MonoBehaviour:
@@ -8402,6 +8401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1584802196
 MonoBehaviour:
@@ -8552,6 +8552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1613109520
 MonoBehaviour:
@@ -8707,6 +8708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1618569852
 MonoBehaviour:
@@ -9397,6 +9399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1683292690
 MonoBehaviour:
@@ -10065,6 +10068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1747129842
 MonoBehaviour:
@@ -10317,6 +10321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1827484783
 MonoBehaviour:
@@ -11074,6 +11079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1940017495
 MonoBehaviour:
@@ -11277,6 +11283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1966191967
 MonoBehaviour:
@@ -11427,6 +11434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &1990682906
 MonoBehaviour:
@@ -11712,6 +11720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1096605135}
   stateColor: []
+  isColored: 0
   canCount: 0
 --- !u!114 &2051688338
 MonoBehaviour:
@@ -12452,6 +12461,10 @@ PrefabInstance:
     - target: {fileID: 288640077507846337, guid: 93b9a1a06d702db439cf4675cb3ee711, type: 3}
       propertyPath: m_Name
       value: JokerButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 288640077507846343, guid: 93b9a1a06d702db439cf4675cb3ee711, type: 3}
+      propertyPath: jokerCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 288640077507846343, guid: 93b9a1a06d702db439cf4675cb3ee711, type: 3}
       propertyPath: keyboard.Array.data[0]

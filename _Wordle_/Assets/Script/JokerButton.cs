@@ -18,7 +18,9 @@ public class JokerButton : MonoBehaviour
     int index;
     float showTimer;
     bool isHintGiven;
-  
+    bool isColorable;
+
+
 
 
     void Awake()
@@ -31,6 +33,7 @@ public class JokerButton : MonoBehaviour
         FindCurrentWord();
         TurnWordToArrayChar();
         ButtonToList();
+        RemoveColored();
        // DeleteJokerLetter();
     }
     void FindCurrentWord()
@@ -63,6 +66,17 @@ public class JokerButton : MonoBehaviour
             }
         }
     }
+    void RemoveColored()
+    {
+        for (int i=0; i<wordsButton.Count; i++)
+        {
+            if (wordsButton[i].GetComponent<Keyboard>().isColored)
+            {
+                wordsButton.RemoveAt(i);
+            }
+        }
+ 
+    }
     void DeleteJokerLetter()
     {
         showTimer -= Time.deltaTime;
@@ -77,7 +91,6 @@ public class JokerButton : MonoBehaviour
         if(jokerCount>0)
         {
             RandomizeHintLetter();
-            ColorKeyBoard();
             showTimer = 2f;
             isHintGiven = true;
             jokerCount--;
@@ -85,17 +98,21 @@ public class JokerButton : MonoBehaviour
     }
     void RandomizeHintLetter()
     {
+        
         index = Random.Range(0, wordsButton.Count);
+        bool isColorable = !wordsButton[index].GetComponent<Keyboard>().isColored;
         for(int i=0; i<wordChar.Count;i++)
         {
-            if (wordsButton[index].name == wordChar[i].ToString())
+            if (wordsButton[index].name == wordChar[i].ToString()&&isColorable)
             {
                 rowController[contentController._index].blocks[i].UpdateText(wordChar[i]);
+                ColorKeyBoard();
             }
         }
     }
     void ColorKeyBoard()
     {
         wordsButton[index].GetComponentInChildren<Image>().color = wordManager.buttonColors[0];
+        wordsButton[index].GetComponent<Keyboard>().isColored = true;
     }
 }
